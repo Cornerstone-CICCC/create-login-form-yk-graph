@@ -8,8 +8,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&family=Roboto:wght@400;500&display=swap"
-      rel="stylesheet"
-    />
+      rel="stylesheet" />
     <link rel="stylesheet" href="./style.css" />
     <title>Document</title>
   </head>
@@ -27,8 +26,7 @@
                 <img
                   src="./images/log-in.svg"
                   alt="login icon"
-                  class="form__title-icon"
-                />
+                  class="form__title-icon" />
                 <h1 class="form__title">Login</h1>
               </div>
               <p class="form__subtext">Insert your information below.</p>
@@ -40,18 +38,13 @@
               <fieldset class="form__field">
                 <legend class="form__label">E-mail</legend>
                 <div class="form__input-wrapper">
-                  <img
-                    src="./images/mail.svg"
-                    alt=""
-                    class="form__input-icon"
-                  />
+                  <span class="form__input-icon form__input-icon--email"></span>
                   <input
                     id="email"
                     type="email"
                     name="email"
                     placeholder="Type your email"
-                    class="form__input"
-                  />
+                    class="form__input" />
                 </div>
               </fieldset>
 
@@ -59,29 +52,24 @@
               <fieldset class="form__field">
                 <legend class="form__label">Password</legend>
                 <div class="form__input-wrapper">
-                  <img
-                    src="./images/lock.svg"
-                    alt=""
-                    class="form__input-icon"
-                  />
+                  <span
+                    class="form__input-icon form__input-icon--password"></span>
                   <input
                     id="password-input"
                     type="password"
                     name="password"
                     placeholder="Type your password"
-                    class="form__input"
-                  />
+                    class="form__input" />
                   <button
                     id="password-toggle"
                     type="button"
                     class="form__password-toggle"
-                    aria-label="Toggle password visibility"
-                  >
+                    aria-label="Toggle password visibility">
                     <img
+                      id="eye-icon"
                       src="./images/eye.svg"
                       alt="show password"
-                      class="form__eye-icon"
-                    />
+                      class="form__eye-icon" />
                   </button>
                 </div>
               </fieldset>
@@ -92,8 +80,7 @@
                   <input
                     type="checkbox"
                     name="remember"
-                    class="form__checkbox"
-                  />
+                    class="form__checkbox" />
                   <span class="form__checkbox-text">Remind me</span>
                 </label>
                 <a href="#" class="form__forgot">Forgot my password</a>
@@ -115,10 +102,12 @@
     <script>
       const passwordToggle = document.getElementById('password-toggle')
       const passwordInput = document.getElementById('password-input')
+      const eyeIcon = document.getElementById('eye-icon')
 
       passwordToggle.addEventListener('click', () => {
         const isPassword = passwordInput.type === 'password'
         passwordInput.type = isPassword ? 'text' : 'password'
+        eyeIcon.src = isPassword ? './images/eye-off.svg' : './images/eye.svg'
       })
     </script>
   </body>
