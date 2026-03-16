@@ -65,13 +65,14 @@
                     class="form__input-icon"
                   />
                   <input
-                    id="password"
+                    id="password-input"
                     type="password"
                     name="password"
                     placeholder="Type your password"
                     class="form__input"
                   />
                   <button
+                    id="password-toggle"
                     type="button"
                     class="form__password-toggle"
                     aria-label="Toggle password visibility"
@@ -85,7 +86,7 @@
                 </div>
               </fieldset>
 
-              <!-- Options row -->
+              <!-- Options -->
               <div class="form__options">
                 <label class="form__checkbox-label">
                   <input
@@ -112,10 +113,10 @@
     </div>
 
     <script>
-      const toggle = document.querySelector('.form__password-toggle')
-      const passwordInput = document.querySelector('#password')
+      const passwordToggle = document.getElementById('password-toggle')
+      const passwordInput = document.getElementById('password-input')
 
-      toggle.addEventListener('click', () => {
+      passwordToggle.addEventListener('click', () => {
         const isPassword = passwordInput.type === 'password'
         passwordInput.type = isPassword ? 'text' : 'password'
       })
