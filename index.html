@@ -1,11 +1,124 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&family=Roboto:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="./style.css" />
     <title>Document</title>
   </head>
-  <body></body>
+  <body>
+    <div class="container">
+      <main class="main">
+        <header class="main__header">
+          <img src="./images/logo.svg" alt="header logo" class="main__logo" />
+        </header>
+        <div class="main__content">
+          <div class="form">
+            <!-- heading -->
+            <div class="form__heading">
+              <div class="form__heading-wrapper">
+                <img
+                  src="./images/log-in.svg"
+                  alt="login icon"
+                  class="form__title-icon"
+                />
+                <h1 class="form__title">Login</h1>
+              </div>
+              <p class="form__subtext">Insert your information below.</p>
+            </div>
+
+            <!-- form body -->
+            <form action="#" class="form__body">
+              <!-- Email -->
+              <fieldset class="form__field">
+                <legend class="form__label">E-mail</legend>
+                <div class="form__input-wrapper">
+                  <img
+                    src="./images/mail.svg"
+                    alt=""
+                    class="form__input-icon"
+                  />
+                  <input
+                    id="email"
+                    type="email"
+                    name="email"
+                    placeholder="Type your email"
+                    class="form__input"
+                  />
+                </div>
+              </fieldset>
+
+              <!-- Password -->
+              <fieldset class="form__field">
+                <legend class="form__label">Password</legend>
+                <div class="form__input-wrapper">
+                  <img
+                    src="./images/lock.svg"
+                    alt=""
+                    class="form__input-icon"
+                  />
+                  <input
+                    id="password"
+                    type="password"
+                    name="password"
+                    placeholder="Type your password"
+                    class="form__input"
+                  />
+                  <button
+                    type="button"
+                    class="form__password-toggle"
+                    aria-label="Toggle password visibility"
+                  >
+                    <img
+                      src="./images/eye.svg"
+                      alt="show password"
+                      class="form__eye-icon"
+                    />
+                  </button>
+                </div>
+              </fieldset>
+
+              <!-- Options row -->
+              <div class="form__options">
+                <label class="form__checkbox-label">
+                  <input
+                    type="checkbox"
+                    name="remember"
+                    class="form__checkbox"
+                  />
+                  <span class="form__checkbox-text">Remind me</span>
+                </label>
+                <a href="#" class="form__forgot">Forgot my password</a>
+              </div>
+
+              <button type="submit" class="form__button">LOGIN</button>
+
+              <p class="form__footer">
+                Don't have an account?
+                <a href="#" class="form__signup">Sign up!</a>
+              </p>
+            </form>
+          </div>
+        </div>
+      </main>
+      <aside class="visual"></aside>
+    </div>
+
+    <script>
+      const toggle = document.querySelector('.form__password-toggle')
+      const passwordInput = document.querySelector('#password')
+
+      toggle.addEventListener('click', () => {
+        const isPassword = passwordInput.type === 'password'
+        passwordInput.type = isPassword ? 'text' : 'password'
+      })
+    </script>
+  </body>
 </html>
